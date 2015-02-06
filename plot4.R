@@ -53,7 +53,7 @@ Sys.setlocale("LC_TIME","English")
 #set background color transparent
 par("bg"="transparent")
 
-#png("plot4.png")
+png("plot4.png")
 par(mfrow=c(2,2))
 #=============================================================================
 # Plot 1
@@ -93,7 +93,7 @@ with(epc,
 with(epc,
 {plot(Date,Global_reactive_power,type="s",xlab="datetime")}
 )
-#dev.off()
+dev.off()
 #=============================================================================
 # END 
 #=============================================================================
