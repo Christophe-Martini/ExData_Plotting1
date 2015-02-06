@@ -47,11 +47,11 @@ Sys.setlocale("LC_TIME","English")
 #set background color transparent
 par("bg"="transparent")
 
-png("plot2.png")
+#png("plot2.png")
 #Using plot type="s"
 with(epc,
 {plot(Date,Global_active_power,type="s",xlab="",ylab="Global Active Power (kilowatts)")}
 )
-dev.off()
+#dev.off()
 Sys.setlocale("LC_TIME",user_lang)
 

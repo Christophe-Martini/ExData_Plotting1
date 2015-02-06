@@ -49,7 +49,7 @@ Sys.setlocale("LC_TIME","English")
 #set background color transparent
 par("bg"="transparent")
 
-png("plot3.png")
+#png("plot3.png")
 
 with(epc,
 {
@@ -71,7 +71,7 @@ with(epc,
 
 )
 
-dev.off()
+#dev.off()
 
 Sys.setlocale("LC_TIME",user_lang)
 
