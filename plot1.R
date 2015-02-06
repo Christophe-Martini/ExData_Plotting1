@@ -41,7 +41,7 @@ epc$Date<-as.Date(epc$Date,"%d/%m/%Y")
 #converting Global_active_power column values as numeric
 epc$Global_active_power<-as.numeric(epc$Global_active_power)
 #set background color transparent
-par("bg"="NA")
+par("bg"="transparent")
 png("plot1.png")
 with(epc,
 {hist(Global_active_power,xlab="Global Active Power (kilowatts)",main="Global Active Power",col="red")}

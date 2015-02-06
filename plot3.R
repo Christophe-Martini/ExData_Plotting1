@@ -47,7 +47,7 @@ user_lang<-Sys.getlocale("LC_TIME")
 Sys.setlocale("LC_TIME","English")
 
 #set background color transparent
-par("bg"="NA")
+par("bg"="transparent")
 
 png("plot3.png")
 
