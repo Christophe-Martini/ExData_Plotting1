@@ -44,14 +44,17 @@ epc<-data.frame(Date=strptime(paste(epc$Date,epc$Time),"%d/%m/%Y %H:%M:%S"),
 user_lang<-Sys.getlocale("LC_TIME")
 Sys.setlocale("LC_TIME","English")
 
-#set background color transparent
-par("bg"="transparent")
+#Selecting and setting device
+png("plot2.png",bg="transparent")
 
-#png("plot2.png")
 #Using plot type="s"
 with(epc,
 {plot(Date,Global_active_power,type="s",xlab="",ylab="Global Active Power (kilowatts)")}
 )
-#dev.off()
+
+#closing device
+dev.off()
+
+#restoring user locale
 Sys.setlocale("LC_TIME",user_lang)
 

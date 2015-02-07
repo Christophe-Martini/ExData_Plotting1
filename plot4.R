@@ -50,16 +50,15 @@ epc<-data.frame(Date=strptime(paste(epc$Date,epc$Time),"%d/%m/%Y %H:%M:%S"),
 user_lang<-Sys.getlocale("LC_TIME")
 Sys.setlocale("LC_TIME","English")
 
-#set background color transparent
-par("bg"="transparent")
 
-png("plot4.png")
+#Selecting and setting device
+png("plot4.png",bg="transparent")
 par(mfrow=c(2,2))
 #=============================================================================
 # Plot 1
 #=============================================================================
 with(epc,
-{plot(Date,Global_active_power,type="s",xlab="",ylab="Global Active Power)")}
+{plot(Date,Global_active_power,type="s",xlab="",ylab="Global Active Power")}
 )
 #=============================================================================
 # Plot 2
@@ -93,9 +92,11 @@ with(epc,
 with(epc,
 {plot(Date,Global_reactive_power,type="s",xlab="datetime")}
 )
-dev.off()
 #=============================================================================
 # END 
 #=============================================================================
+#closing device
+dev.off()
+#restoring defaults
 par(mfrow=c(1,1))
 Sys.setlocale("LC_TIME",user_lang)

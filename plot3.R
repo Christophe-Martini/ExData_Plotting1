@@ -46,10 +46,8 @@ epc<-data.frame(Date=strptime(paste(epc$Date,epc$Time),"%d/%m/%Y %H:%M:%S"),
 user_lang<-Sys.getlocale("LC_TIME")
 Sys.setlocale("LC_TIME","English")
 
-#set background color transparent
-par("bg"="transparent")
-
-#png("plot3.png")
+#Selecting and setting device
+png("plot3.png",bg="transparent")
 
 with(epc,
 {
@@ -63,7 +61,10 @@ with(epc,
    
    legend("topright",col=c("black","red","blue"),
           lty=c(1,1,1),
-          legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
+          legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+          lwd=1,
+          cex=1
+          
    )
    
 
@@ -71,7 +72,9 @@ with(epc,
 
 )
 
-#dev.off()
+#closing device
+dev.off()
 
+#restoring user locale
 Sys.setlocale("LC_TIME",user_lang)
 
